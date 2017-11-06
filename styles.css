@@ -1,0 +1,11 @@
+html {
+  background-color: #bfc4bc;
+}
+h1{
+  font-family: 'Josefin Sans', sans-serif;
+  color: #f7596b;
+  text-shadow: 1px 1px black;
+  text-align: center;
+  text-decoration: underline;
+  margin: auto;
+}
