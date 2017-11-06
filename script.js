@@ -4,9 +4,9 @@
   $.get("https://www.reddit.com/r/aww/.json", function(data) {
 
     var redditPosts = data.data.children;//stores info
-
+    var article = redditPosts[];
     for( var i = 1; i <= 10; i ++){ //loop to run thru posts, skipping the first one
-      var article = redditPosts[i];
+
 
 
       var blogTitle = post.data.title;
@@ -19,14 +19,14 @@
 
 
 
-      blogEl.append(blogContainer);
+      blogEl.append(article);
       blogEl.append(blogTitle);
       blogEl.append(blogUrl);
       blogEl.append(blogScore);
       blogEl.append(blogAuthor);
       blogEl.appand(blogThumbnail);
 
-      
+
 
 
 
@@ -38,3 +38,4 @@
 
 
 }
+});
