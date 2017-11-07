@@ -1,41 +1,41 @@
+// get the json file
+$.get("https://www.reddit.com/r/aww/.json", function(data) {
 
+      var blogPost = data.data.children; //stores info
 
-  // get the json file
-  $.get("https://www.reddit.com/r/aww/.json", function(data) {
+      for (var i = 1; i <= 10; i++) { //loop to run thru posts, skipping the first one
 
-    var redditPosts = data.data.children;//stores info
-    var article = redditPosts[];
-    for( var i = 1; i <= 10; i ++){ //loop to run thru posts, skipping the first one
+        var article = blogPost[i];
+        var blogEl = $("<section>");
 
+        var blogContainer = $("<ol id='blogContainer'>");
+        blogEl.append(blogContainer);
 
+        var textContent = $("<div id='textContent'>");
+        blogContainer.append(textContent);
 
-      var blogTitle = post.data.title;
-      var blogUrl = post.data.url;
-      var blogScore = post.data.score;
-      var blogAuthor = post.data.author;
-      var blogThumbnail = post.data.thumbnail;
-      var blogEl = $("<section>");
-      var blogPage = $("<div id='blogPage'>");
+        var thumbnail = article.data.thumbnail;
+        var photo = $("<div id='photo'>");
+        photo.append("<img src=" + thumbnail + ">");
+        blogContainer.append(photo);
 
+        var title = article.data.title;
+        var blogTitle = $("<h3 id='title'>");
+        blogTitle.append(title);
+        textContent.append(blogTitle);
 
-
-      blogEl.append(article);
-      blogEl.append(blogTitle);
-      blogEl.append(blogUrl);
-      blogEl.append(blogScore);
-      blogEl.append(blogAuthor);
-      blogEl.appand(blogThumbnail);
-
-
-
-
-
+        var link = article.data.domain;
+        var blogLink = $("<a href='" + link + "'>Link to Article</a>");
+        textContent.append(blogLink);
 
 
 
 
-      $("#main").append(postEl);
 
 
-}
+
+      $("#mainPage").append(blogEl);
+
+
+    }
 });

@@ -1,11 +1,17 @@
 html {
-  background-color: #bfc4bc;
+  background-color: #4f594a;
 }
-h1{
+header{
+  font-size: 24px;
   font-family: 'Josefin Sans', sans-serif;
   color: #f7596b;
   text-shadow: 1px 1px black;
   text-align: center;
   text-decoration: underline;
-  margin: auto;
+
+}
+#title{
+  width: 100%;
+  color: white;
+  font-family: monospace;
 }
